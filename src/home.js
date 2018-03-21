@@ -19,8 +19,13 @@ module.exports = function($scope, $http, $localStorage) {
               }
               return;
             }
+              let id = parseInt($localStorage.posts[$localStorage.posts.length - 1].id) + 1;
               $localStorage.posts = $scope.allPosts;
-              $localStorage.posts.unshift({id: parseInt($localStorage.posts[$localStorage.posts.length - 1].id) + 1, title: title, body: body, userId: 3.14159});
+              $localStorage.posts.unshift({id: id,
+                                          title: title,
+                                          body: body,
+                                          userId: 3.14159
+                                        });
               $localStorage.use = true;
               $scope.titleError = "";
               link.$open = !link.$open;
