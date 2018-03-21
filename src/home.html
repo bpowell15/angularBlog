@@ -8,15 +8,15 @@
 
    <div class="mymodal"  data-ng-if="link.$open">
      <form class="d-flex justify-content-center flex-column mymodalform" ng-submit="submit()">
-       <button type="button" class="close align-self-end" data-ng-click="link.$open = !link.$open" aria-label="Close">
+       <button type="button" class="close align-self-end" data-ng-click="close(link)" aria-label="Close">
         <span aria-hidden="true"><h2>&times;</h2></span>
        </button>
        <h1>New Blog</h1>
-       <label for="title">Title </br>
-        <input ng-model="title" class='w-100' id="title" class="m-3" />
+       <label for="title">Title<span class="error">{{titleError}}</span> </br>
+        <input ng-model="title" class='w-100' id="title" class="m-3" value=" " />
        </label>
-       <label for="body">Body </br>
-        <textarea ng-model="body" class="w-100" id="body" class="m-3" rows="4" />
+       <label for="body">Body<span class="error">{{bodyError}}</span> </br>
+        <textarea ng-model="body" class="w-100" id="body" class="m-3" rows="4" value=" " />
        </label>
        <button type="button" class="btn btn-primary m-1 p-3" data-ng-click="submit(title, body, link);">Post</button>
      </form>
