@@ -1,4 +1,27 @@
+*{
+  font-weight: 100;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+@keyframes fadeIn {
+ 0% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+@keyframes fade {
+ 0% {opacity: 0;}
+ 50%{opacity: 0}
+ 75%{opacity: 0}
+ 100% {opacity: 1;}
+}
+
+.title {
+  color: black;
+}
+
 .mymodal {
+  display: flex;
+  justify-content: center;
+  margin-left: -16px;
   position: fixed;
   background-color: #000000c7;
   /* padding: 20px; */
@@ -7,15 +30,88 @@
   top: 0;
   /* overflow: hidden; */
   z-index: 100;
+  animation: fadeIn .75s;
 }
 
-.modal form {
-  position: absolute;
+.mymodalform {
+  margin-top: 200px;
   background-color: white;
   padding: 20px;
-  width: 40em;
-  margin: auto;
-  top: 25%;
-  left: 28%;
+  width: 50vw;
+  max-width: 580px;
+  max-height: 420px;
+  min-width: 388px;
+  /* margin: auto; */
+  animation: fade 1.25s;
+}
+
+input, textarea {
+  border: 1px solid rgb(203, 203, 203);
+  padding: 10px;
+  outline: none !important;
+  border-radius: .3rem;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid rgb(2, 122, 255);
+}
+input:focus::-webkit-input-placeholder {
+opacity: 0;
+}
+
+.search {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.abbr {
+  max-height: 9em;
+  overflow: hidden;
+}
+
+h2{
+  max-height: 1em;
+overflow: hidden;
+
+}
+
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  justify-content: space-between;
+  background-color: rgb(237, 237, 237);
+}
+
+.more {
+  bottom: 10px;
+  position: absolute;
+}
+.post {
+  padding: 100px;
+  min-height: 251px;
+}
+
+
+main {
+  padding: 100px 0;
+}
+
+@media only screen and (max-width: 415px) {
+  main {
+    padding: 200px 0;
   }
+}
+
+@media only screen and (max-width: 225px) {
+main {
+  padding: 250px 0;
 }
