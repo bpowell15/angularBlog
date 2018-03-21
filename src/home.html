@@ -7,18 +7,18 @@
    data-ng-click="link.$open = !link.$open" type="button" name="button">Create New Post</button>
 
    <div class="mymodal"  data-ng-if="link.$open">
-     <form class="d-flex justify-content-center flex-column mymodalform" ng-submit="submit()">
-       <button type="button" class="close align-self-end" data-ng-click="close(link)" aria-label="Close">
+     <form name="newBlog" class="d-flex justify-content-center flex-column mymodalform" ng-submit="submit()">
+       <button type="button" class="close align-self-end" data-ng-click="link.$open = !link.$open;" aria-label="Close">
         <span aria-hidden="true"><h2>&times;</h2></span>
        </button>
        <h1>New Blog</h1>
-       <label for="title">Title<span class="error">{{titleError}}</span> </br>
-        <input ng-model="title" class='w-100' id="title" class="m-3" />
+       <label for="title">Title</br>
+        <input type="text" ng-model="title" class='w-100' name="title" required />
        </label>
-       <label for="body">Body<span class="error">{{bodyError}}</span> </br>
-        <textarea ng-model="body" class="w-100" id="body" class="m-3" rows="4" />
+       <label for="body">Body</br>
+        <textarea ng-model="body" class="w-100" id="body" class="m-3" rows="4" required />
        </label>
-       <button type="button" class="btn btn-primary m-1 p-3" data-ng-click="submit(title, body, link);">Post</button>
+       <button type="button" class="btn btn-primary m-1 p-3" ng-disabled="newBlog.$invalid" data-ng-click="submit(title, body); link.$open = !link.$open;">Post</button>
      </form>
    </div>
 
