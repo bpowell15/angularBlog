@@ -1,0 +1,11 @@
+<nav class="navbar d-flex">
+  <a href="#!/"><h1 class="horizontal-center title">Blog Posts</h1></a>
+</nav>
+<div class="post d-flex justify-content-center">
+  <div class="d-flex flex-column w-50 align-content-center" ng-controller="postController">
+    <h1>{{posts.title}}</h1>
+    <h4>{{"Author: " + posts.userId}}
+    <p class="text-justify">{{posts.body}}</p>
+    <a href="#!/">&larr; Back</a>
+  </div>
+</div>

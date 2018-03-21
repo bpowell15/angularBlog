@@ -1,0 +1,51 @@
+<div ng-controller="homeController">
+
+  <nav class="navbar d-flex">
+   <a href="#!/"><h1 class="horizontal-center title">Blog Posts</h1></a>
+   <input class="search" type="text" ng-model="$scope.query" name="search" placeholder="Search Posts">
+   <button class="btn btn-primary btn-lg" data-ng-href="Create New Post"
+   data-ng-click="link.$open = !link.$open" type="button" name="button">Create New Post</button>
+
+   <div class="mymodal"  data-ng-if="link.$open">
+     <form class="d-flex justify-content-center flex-column mymodalform" ng-submit="submit()">
+       <button type="button" class="close align-self-end" data-ng-click="link.$open = !link.$open" aria-label="Close">
+        <span aria-hidden="true"><h2>&times;</h2></span>
+       </button>
+       <h1>New Blog</h1>
+       <label for="title">Title </br>
+        <input ng-model="title" class='w-100' id="title" class="m-3" />
+       </label>
+       <label for="body">Body </br>
+        <textarea ng-model="body" class="w-100" id="body" class="m-3" rows="4" />
+       </label>
+       <button type="button" class="btn btn-primary m-1 p-3" data-ng-click="submit(title, body); link.$open = !link.$open">Post</button>
+     </form>
+   </div>
+
+  </nav>
+
+  <main class="container"=>
+    <div class="row d-flex justify-content-center">
+      <article class="post col-md-3 border p-3 m-1 align-content-space-between" ng-repeat="post in allPosts | filter: $scope.query">
+        <h2>{{post.title}}</h2>
+        <h6>Author: {{post.userId}}</h6>
+        <p class="text-justify abbr">{{post.body}}</p>
+        <a class="align-self-end more" href="#!/post/{{post.id}}">Read More &rarr;</a>
+      </article>
+    </div>
+  </main>
+
+</div>
+
+<!-- <div class="container">
+  <div class="jumbotron">
+    <h1>Welcome</h1>
+    <h2>Angular & Bootstrap Demo</h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Status</div>
+    <div class="panel-body">
+      <h3>{{title}}</h3>
+    </div>
+  </div> -->
+</div>

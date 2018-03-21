@@ -1,0 +1,21 @@
+.mymodal {
+  position: fixed;
+  background-color: #000000c7;
+  /* padding: 20px; */
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  /* overflow: hidden; */
+  z-index: 100;
+}
+
+.modal form {
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  width: 40em;
+  margin: auto;
+  top: 25%;
+  left: 28%;
+  }
+}
